@@ -1,37 +1,39 @@
-## Three-Tier Application: Frontend, Backend, and Database
+## Final Project 
+The DevOps Final Project involves several tasks related to infrastructure provisioning, deployment, and containerization. Here's a description of each task:
 
-This is a simple example of a three-tier application that consists of a frontend, backend, and a database. The application is designed to test the connection to a database and display the result on a webpage.
+-  **Terraform**
+	1. Install VirtualBox on your local machine 
+	2. Install terraform  on your local machine 
+	3. Create 2 VMs using Terraform with VirtualBox provider
 
-### Technologies Used
+- **Ansible**
+	1. Install Ansible in your local machine
+	2. Deploy k3s cluster 1 master and 1 node using Ansible
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express.js
-- Database: MySQL
+- **Docker**
+	1. Install Docker on your local machine
+	1. Create docker files for the mentoned application
+		1. Frontend image
+		2. Backend image
+			1- To install the dependencies (npm install)
+			2- Start the backend (node app.js)
+	2. Create account on docker hub
+	3. Push docker images to docker hub
 
-### Prerequisites
-- Node.js and npm
-- MySQL
+- **Kubernetes manifest yaml files**
+	1. Create YAML files to deploy the three-tier application
+		1. Deployment for Frontend
+		2. Deployment for Backend
+		3. StatefulSet for MySQL 
+			1. Create a new database with username and password to use them in backend deployment
+		4. Configmap for backend vairables (host, user, database)
+		5. Secret for backend secret (password)
 
-### Setup and Installation
 
-1.Clone this repository or download the source code.
+### To review the project, you'll need to provide:
 
-2.Backend Setup:
-- Navigate to the backend directory in the terminal.
-- Run the following command to install the dependencies:
-
-```
-	npm install
-```
-- Open the app.js file and replace the placeholders (your_mysql_username, your_mysql_password, and your_database_name) with your actual database connection details.
-- Start the backend server by running the following command:
-
-```
-node app.js
-```
-
-3.Frontend Setup:
-
-- Open the index.html file in a web browser.
-- The webpage will make an HTTP request to the backend API endpoint to test the database connection.
-- The result of the connection test will be displayed on the webpage.
+- The Terraform file responsible for creating the two VMs.
+- The Ansible file used to deploy the Kubernetes cluster using k3s.
+- The Dockerfile(s) used to build the backend and frontend Docker images.
+- The Docker Hub link where the pushed Docker images can be accessed.
+- The Kubernetes YAML files for deploying the frontend, backend, MySQL, ConfigMap, and Secrets.
